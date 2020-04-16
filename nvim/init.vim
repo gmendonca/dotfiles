@@ -44,6 +44,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'jacoborus/tender.vim'
+Plug 'janko/vim-test'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -51,8 +54,10 @@ autocmd VimEnter * wincmd p
 let g:NERDTreeWinPos = "left"
 map <C-n> :NERDTreeToggle<CR>
 map <C-p> :NERDTreeFind<CR>
+let NERDTreeIgnore = ['\.pyc$','\.c$']
 
 map <C-m> :FZF<CR>
+map <C-b> :Buffers<CR>
 let g:CommandTSuppressMaxFilesWarning = 1
 
 let g:loaded_matchparen=1
@@ -113,7 +118,23 @@ set copyindent      " copy indent from the previous line
 " Configuration for vim-scala
 au BufRead,BufNewFile *.sbt set filetype=scala
 
+" Vim Scala suggested this
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" Theme
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+syntax enable
+colorscheme tender
+
+" Vim Test
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 
 " CoC Configurations
 " TextEdit might fail if hidden is not set.
@@ -269,11 +290,3 @@ nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
 nnoremap <silent> <space>tc :<C-u>CocCommand metals.tvp metalsCompile<CR>
 " Reveal current current class (trait or object) in Tree View 'metalsBuild'
 nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsBuild<CR>
-
-if (has("termguicolors"))
- set termguicolors
-endif
-
-" Theme
-syntax enable
-colorscheme tender
