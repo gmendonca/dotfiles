@@ -6,3 +6,6 @@ map g<C-N> g<A-N>
 
 set surround
 set commentary
+
+set visualbell
+set noerrorbells
