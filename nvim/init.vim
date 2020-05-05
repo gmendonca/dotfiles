@@ -25,6 +25,8 @@ set nu
 set mouse=a
 set clipboard=unnamed
 set foldlevel=99
+
+
 let mapleader=","
 
 call plug#begin('~/.vim/plugged')
@@ -57,8 +59,10 @@ map <C-p> :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.pyc$','\.c$']
 
 map <C-m> :FZF<CR>
-map <C-b> :Buffers<CR>
+map <leader>b :Buffers<CR>
 let g:CommandTSuppressMaxFilesWarning = 1
+
+map <leader>n :noh<CR>
 
 let g:loaded_matchparen=1
 let g:AutoPairs = {}
@@ -88,6 +92,9 @@ let g:multi_cursor_next_key='<C-e>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_quit_key='<Esc>'
 
+" spell checker
+nnoremap <silent> <leader>s :set spell!<cr>
+
 " Vim Markdown Preview
 let vim_markdown_preview_github=1
 
@@ -106,6 +113,29 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+" tab
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<CR>
+noremap <leader>ts :tabs<CR>
+noremap <leader>tr :tabr<CR>
+noremap <leader>tl :tabl<CR>
+noremap <leader>tm :tabm
+noremap <leader>to :tabonly<CR>
+noremap <leader>tc :tabclose<CR>
+
+" Git
+noremap <leader>gt :Git 
+noremap <leader>gs :Git status<CR>
+noremap <leader>ga :Git add 
 
 " spaces and tabs
 set tabstop=22      " number of visual spaces per TAB

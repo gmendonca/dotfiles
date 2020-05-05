@@ -1,4 +1,5 @@
 {
-  "python.setLinter": "flake8",
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "black"
 }
