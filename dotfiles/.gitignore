@@ -4,3 +4,6 @@ target
 .metals/
 metals.sbt
 .vim
+.env
+
+secret.json
