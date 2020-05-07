@@ -1,4 +1,3 @@
 #!/bin/bash
 
-brew install pyenv
-brew uninstall pyenv-virtualenv
+brew install pyenv pyenv-virtualenv
