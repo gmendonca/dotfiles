@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "./setup/utils.sh"
+    && . "./setup/utils.sh" \
     && . "./setup/.env.var"
 
 main() {
