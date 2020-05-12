@@ -1,5 +1,7 @@
 # Setup
 
+Start by running `xcode-select --install` in the default terminal and following instructions.
+
 ## iterm
 
 Download and install [iTerm2](https://www.iterm2.com/index.html)
