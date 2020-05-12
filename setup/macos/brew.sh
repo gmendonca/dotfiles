@@ -14,3 +14,6 @@ if ! cmd_exists "brew"; then
   print_info "Installing cask packages..."
   brew cask install iterm2 rectangle
 fi
+
+cd ~/workspace/dotfiles/setup/macos/
+brew bundle
