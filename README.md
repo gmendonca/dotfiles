@@ -12,6 +12,8 @@ Then:
 $ mkdir ~/workspace && git clone git@github.com:gmendonca/dotfiles.git && make macos
 ```
 
+Remember to `source ~/.zshrc` after it
+
 ## iTerm
 
 * Go to Preferences > Profiles > Terminal and toggle `Unlimited scroll`
@@ -54,10 +56,3 @@ and add `PYTHONPATH=./scr/to/python/files`.
 
 * Select the color in Profiles > Colors > Color Presets... > Import...
 > iTerm2-Color-Schemes > schemes > Gruvbox Dark
-
-## Screenshots location
-
-```
-$ mkdir ~/Pictures/screenshots
-$ defaults write com.apple.screencapture location ~/Pictures/screenshots
-```

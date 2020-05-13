@@ -9,8 +9,6 @@ brew 'wget'
 brew 'fzf'
 brew 'ctags'
 brew 'neovim'
-brew 'node'
-brew 'yarn'
 brew 'gpg'
 brew 'diff-so-fancy'
 
@@ -18,3 +16,25 @@ brew 'diff-so-fancy'
 cask 'rectangle'
 cask 'kitty'
 cask 'iterm2'
+
+# node
+brew 'node'
+brew 'yarn'
+
+# java
+cask 'homebrew/cask-versions/zulu8'
+cask 'homebrew/cask-versions/zulu11'
+brew 'jenv'
+
+# python
+brew 'pyenv'
+brew 'pyenv-virtualenv'
+
+# scala
+brew 'scala' 
+brew 'sbt'
+
+brew 'mas'
+mas  'The Unarchiver', id: 425424353
+# TODO: Add the other ones
+cask 'spotify'

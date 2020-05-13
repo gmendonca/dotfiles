@@ -4,6 +4,29 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "./setup/utils.sh" \
     && . "./setup/.env.var"
 
+java() {
+  JENV_PATH=~/.jenv/versions/
+  mkdir -p $JENV_PATH
+  if [ ! -d "$JENV_PATH/8" ]; then
+    ln -fs /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home $JENV_PATH/8
+  fi
+  if [ ! -d "$JENV_PATH/11" ]; then
+    ln -fs /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home $JENV_PATH/11
+  fi
+}
+
+python() {
+  packages=( pynvim neovim pylint jedi tox tox-venv black flake8 )
+  for i in "${packages[@]}"
+  do
+    if [[ $(python3 -c "import $i" &> /dev/null) ]]; then 
+      print_info "Installing $i"
+      pip3 install $i --user
+    fi
+  done
+}
+
+
 main() {
 
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -26,14 +49,6 @@ main() {
     curl -fLo $PLUGVIM --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
 
-  if [[ $(python3 -c "import pynvim" &> /dev/null) ]]; then 
-    pip3 install pynvim --user
-  fi
-
-  if [[ $(python3 -c "import pynvim" &> /dev/null) ]]; then 
-    pip3 install neovim --user
-  fi
-
   mkdir -p ~/Pictures/screenshots
   defaults write com.apple.screencapture location ~/Pictures/screenshots
 
@@ -46,4 +61,7 @@ main() {
 cd "$(dirname "${BASH_SOURCE[0]}")"
 sh "./setup/macos/brew.sh"
 sh "./setup/macos/git.sh"
+
 main
+java
+python

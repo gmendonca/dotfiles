@@ -18,3 +18,6 @@ git config --global user.name $GIT_USER_NAME
 git config --global user.email $GIT_USER_EMAIL
 git config --global core.excludesfile ~/workspace/.gitignore
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+
+mkdir -p ~/.gnupg
+ln -fs ~/workspace/dotfiles/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
