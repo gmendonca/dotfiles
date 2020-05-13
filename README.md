@@ -12,7 +12,8 @@ Then:
 $ mkdir ~/workspace && git clone git@github.com:gmendonca/dotfiles.git && make macos
 ```
 
-Remember to `source ~/.zshrc` after it
+Remember to `source ~/.zshrc` after it.
+You can also restart `gpg-connect-agent reloadagent /bye` to override default ttls of gpg password on git commits.
 
 ## iTerm
 
