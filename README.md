@@ -1,4 +1,9 @@
-# Setup
+# dotfiles
+
+This is my personal setup and it should be constatly updated to whatever works for me.
+If you were to use it, please read the script before running it and comment out the parts that don't work for you.
+
+## Setup
 
 Start by running `xcode-select --install` in the default terminal and following instructions.
 
