@@ -16,10 +16,10 @@ java() {
 }
 
 python() {
-  packages=( pynvim neovim pylint jedi tox tox-venv black flake8 )
+  packages=( pynvim neovim pylint jedi tox tox-venv black flake8 notebook )
   for i in "${packages[@]}"
   do
-    if [[ $(python3 -c "import $i" &> /dev/null) ]]; then 
+    if ! $(pip3 list --disable-pip-version-check | grep $i &> /dev/null) ; then 
       print_info "Installing $i"
       pip3 install $i --user
     fi

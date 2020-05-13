@@ -25,6 +25,7 @@ You can also restart `gpg-connect-agent reloadagent /bye` to override default tt
 * Go to Preferences > Profiles > Terminal and toggle `Unlimited scroll`
 * Go to General > Selection and toggle `Applications in terminal may access clipboard`
 * Go to Preferences > Profiles > Text > Font and change to `Meslo LG L for Powerline`
+* Go to Preferences > Profiles > Terminal and toggle `Silence bell`
 * Go to Preferences > Profiles > Keys and add:
 1. Move one word forward
 ```

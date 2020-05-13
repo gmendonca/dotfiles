@@ -12,7 +12,7 @@ brew 'neovim'
 brew 'gpg'
 brew 'diff-so-fancy'
 
-#cask 'google-chrome'
+# cask 'google-chrome'
 cask 'rectangle'
 cask 'kitty'
 cask 'iterm2'
@@ -34,7 +34,21 @@ brew 'pyenv-virtualenv'
 brew 'scala' 
 brew 'sbt'
 
+# Google SDK
+cask 'google-cloud-sdk'
+
 brew 'mas'
-mas  'The Unarchiver', id: 425424353
-# TODO: Add the other ones
+mas '1Password 7', id: 1333542190
+mas 'GoodNotes', id: 1444383602
+mas 'Things', id: 904280696
+mas 'Bear', id: 1091189122
+mas 'Slack', id: 803453959
+mas 'Reeder', id: 1449412482
+mas 'The Unarchiver', id: 425424353
+mas 'Telegram', id: 747648890
+mas 'WhatsApp', id: 1147396723
+
+# cask 'alfred'
 cask 'spotify'
+cask 'docker'
+cask 'vlc'
