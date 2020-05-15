@@ -52,3 +52,4 @@ mas 'WhatsApp', id: 1147396723
 cask 'spotify'
 cask 'docker'
 cask 'vlc'
+cask 'discord'
