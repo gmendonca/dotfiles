@@ -33,9 +33,13 @@ brew 'pyenv-virtualenv'
 # scala
 brew 'scala' 
 brew 'sbt'
+brew 'coursier/formulas/coursier'
 
 # Google SDK
 cask 'google-cloud-sdk'
+
+# dev
+cask 'visual-studio-code'
 
 brew 'mas'
 mas '1Password 7', id: 1333542190
