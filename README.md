@@ -63,3 +63,10 @@ and add `PYTHONPATH=./scr/to/python/files`.
 
 * Select the color in Profiles > Colors > Color Presets... > Import...
 > iTerm2-Color-Schemes > schemes > Gruvbox Dark
+
+Other Coc installations:
+```
+:CocInstall coc-json
+:CocInstall coc-git
+:CocInstall coc-metals
+```
