@@ -47,5 +47,6 @@ alias nz='n ~/.zshrc'
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 alias sz='source ~/.zshrc'
+alias sj="export JAVA_HOME=$(jenv prefix)"
 
 alias jn='jupyter notebook'

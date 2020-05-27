@@ -69,4 +69,5 @@ Other Coc installations:
 :CocInstall coc-json
 :CocInstall coc-git
 :CocInstall coc-metals
+:CocInstall coc-java
 ```
