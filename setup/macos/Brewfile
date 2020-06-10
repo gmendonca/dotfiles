@@ -51,6 +51,7 @@ mas 'Reeder', id: 1449412482
 mas 'The Unarchiver', id: 425424353
 mas 'Telegram', id: 747648890
 mas 'WhatsApp', id: 1147396723
+mas 'Amphetamine', id: 937984704
 
 # cask 'alfred'
 cask 'spotify'
