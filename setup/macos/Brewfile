@@ -34,6 +34,8 @@ brew 'pyenv-virtualenv'
 brew 'scala' 
 brew 'sbt'
 brew 'coursier/formulas/coursier'
+tap 'scalacenter/bloop'
+brew 'scalacenter/bloop/bloop'
 
 # Google SDK
 cask 'google-cloud-sdk'
