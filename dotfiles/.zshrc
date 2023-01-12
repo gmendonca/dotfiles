@@ -22,17 +22,19 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# Python3
-export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+
+# psql
+export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export PATH="$PYENV_ROOT/shims:$PATH"
+
 
 # neovim and fzf
 export EDITOR=nvim
@@ -51,3 +53,7 @@ alias sz='source ~/.zshrc'
 alias sj="export JAVA_HOME=$(jenv prefix)"
 
 alias jn='jupyter notebook'
+
+alias k='kubectl'
+
+export PATH="$HOME/Library/Application Support/Coursier/bin:$PATH"

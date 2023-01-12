@@ -5,5 +5,9 @@ target
 metals.sbt
 .vim
 .env
+.bsp
 
 secret.json
+.java-version
+.tox
+_qstyx/
