@@ -47,8 +47,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'jacoborus/tender.vim'
 Plug 'janko/vim-test'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
