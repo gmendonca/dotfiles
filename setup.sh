@@ -56,12 +56,12 @@ main() {
   ln -fs ~/workspace/dotfiles/dotfiles/.zshrc ~/.zshrc
   ln -fs ~/workspace/dotfiles/dotfiles/.gitignore ~/.gitignore
   ln -fs ~/workspace/dotfiles/dotfiles/.ackrc ~/.ackrc
-  ln -fs ~/workspace/dotfiles/dotfiles/.ideavimrc ~/.ideavimrc
 
   ln -fs ~/workspace/dotfiles/setup/macos/idea /usr/local/bin/idea
 }
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
+
 sh "./setup/macos/brew.sh"
 sh "./setup/macos/git.sh"
 

@@ -33,9 +33,6 @@ brew 'pyenv-virtualenv'
 # scala
 brew 'scala' 
 brew 'sbt'
-brew 'coursier/formulas/coursier'
-tap 'scalacenter/bloop'
-brew 'scalacenter/bloop/bloop'
 
 # Google SDK
 cask 'google-cloud-sdk'
@@ -44,21 +41,13 @@ cask 'google-cloud-sdk'
 cask 'visual-studio-code'
 
 brew 'mas'
-mas '1Password 7', id: 1333542190
 mas 'GoodNotes', id: 1444383602
-mas 'Things', id: 904280696
-mas 'Bear', id: 1091189122
 mas 'Slack', id: 803453959
 mas 'Reeder', id: 1449412482
 mas 'The Unarchiver', id: 425424353
-mas 'Telegram', id: 747648890
-mas 'WhatsApp', id: 1147396723
 mas 'Amphetamine', id: 937984704
-mas 'NordVPN IKE', id: 1116599239
 mas 'iA Writer', id: 775737590
 
-# cask 'alfred'
+cask 'alfred'
 cask 'spotify'
 cask 'docker'
-cask 'vlc'
-cask 'discord'

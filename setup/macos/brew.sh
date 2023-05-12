@@ -8,11 +8,7 @@ if ! cmd_exists "brew"; then
   print_info "Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-  print_info "Installing packages..."
-  brew install cmake fzf ctags jq fd wget ack neovim
-  
-  print_info "Installing cask packages..."
-  brew cask install iterm2 rectangle
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 cd ~/workspace/dotfiles/setup/macos/

@@ -11,20 +11,19 @@ source $ZSH/oh-my-zsh.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Github GPG
 export GPG_TTY=$(tty)
 
 # Google Cloud Platform
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 #jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-
-
-# psql
-export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -34,6 +33,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export PATH="$PYENV_ROOT/shims:$PATH"
+
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 
 
 # neovim and fzf
@@ -55,5 +56,3 @@ alias sj="export JAVA_HOME=$(jenv prefix)"
 alias jn='jupyter notebook'
 
 alias k='kubectl'
-
-export PATH="$HOME/Library/Application Support/Coursier/bin:$PATH"
