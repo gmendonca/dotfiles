@@ -17,6 +17,8 @@ cask 'rectangle'
 cask 'kitty'
 cask 'iterm2'
 
+brew 'flyteorg/homebrew-tap/flytectl'
+
 # node
 brew 'node'
 brew 'yarn'
