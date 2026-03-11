@@ -59,3 +59,9 @@ sh "./setup/macos/git.sh"
 
 main
 python
+
+# Claude Code
+if ! cmd_exists "claude"; then
+  print_info "Installing Claude Code"
+  npm install -g @anthropic-ai/claude-code
+fi
