@@ -3,6 +3,9 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../utils.sh"
 
+# Restart gpg-agent to avoid version mismatch warnings after brew upgrades
+gpgconf --kill all
+
 if [[ $(gpg --list-secret-keys --keyid-format LONG) ]]; then
   print_info "Key Found"
   gpg --armor --export "$(gpg --list-secret-keys --keyid-format LONG | awk 'FNR==3{print $2}' | cut -d/ -f2)" | pbcopy

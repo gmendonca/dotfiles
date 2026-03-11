@@ -14,7 +14,7 @@ Copy `setup/.env.var.example` to `setup/.env.var` and adapt it accordingly.
 Then:
 
 ```sh
-$ mkdir ~/workspace && cd $ ~/workspace && git clone git@github.com:gmendonca/dotfiles.git && make macos
+$ mkdir ~/workspace && cd ~/workspace && git clone git@github.com:gmendonca/dotfiles.git && make macos
 ```
 
 Remember to `source ~/.zshrc` after it.
@@ -51,7 +51,7 @@ d
 
 ## NeoVim
 
-Open nvim and type `:PluginInstall`
+Open nvim and type `:PlugInstall`
 
 ### CoC
 

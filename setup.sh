@@ -4,24 +4,18 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "./setup/utils.sh" \
     && . "./setup/.env.var"
 
-java() {
-  JENV_PATH=~/.jenv/versions/
-  mkdir -p $JENV_PATH
-  if [ ! -d "$JENV_PATH/8" ]; then
-    ln -fs /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home $JENV_PATH/8
-  fi
-  if [ ! -d "$JENV_PATH/11" ]; then
-    ln -fs /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home $JENV_PATH/11
-  fi
-}
-
 python() {
-  packages=( pynvim neovim pylint jedi tox tox-venv black flake8 notebook )
+  # Install a modern Python via pyenv and set it as global
+  PYTHON_VERSION=$(pyenv install --list | grep -E '^\s+3\.[0-9]+\.[0-9]+$' | tail -1 | tr -d ' ')
+  pyenv install --skip-existing "$PYTHON_VERSION"
+  pyenv global "$PYTHON_VERSION"
+
+  packages=( pynvim pylint black flake8 notebook )
   for i in "${packages[@]}"
   do
-    if ! $(pip3 list --disable-pip-version-check | grep $i &> /dev/null) ; then 
+    if ! $(pip list --disable-pip-version-check | grep $i &> /dev/null) ; then
       print_info "Installing $i"
-      pip3 install $i --user
+      pip install $i
     fi
   done
 }
@@ -30,7 +24,7 @@ python() {
 main() {
 
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
   FONTS=~/workspace/fonts
@@ -45,7 +39,7 @@ main() {
   fi
 
   PLUGVIM=~/.local/share/nvim/site/autoload/plug.vim
-  if [ ! -d "$PLUGVIM" ]; then
+  if [ ! -f "$PLUGVIM" ]; then
     curl -fLo $PLUGVIM --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
 
@@ -56,8 +50,6 @@ main() {
   ln -fs ~/workspace/dotfiles/dotfiles/.zshrc ~/.zshrc
   ln -fs ~/workspace/dotfiles/dotfiles/.gitignore ~/.gitignore
   ln -fs ~/workspace/dotfiles/dotfiles/.ackrc ~/.ackrc
-
-  ln -fs ~/workspace/dotfiles/setup/macos/idea /usr/local/bin/idea
 }
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
@@ -66,5 +58,4 @@ sh "./setup/macos/brew.sh"
 sh "./setup/macos/git.sh"
 
 main
-java
 python
