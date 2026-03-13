@@ -35,6 +35,7 @@ alias f='fzf'
 alias c='cd $(fd --type d | fzf)'
 alias ni='n ~/.config/nvim/init.vim'
 alias nz='n ~/.zshrc'
+alias cls='~/.claude/scripts/csessions'
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 
