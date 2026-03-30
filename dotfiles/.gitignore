@@ -13,3 +13,5 @@ secret.json
 .tox
 _qstyx/
 *.iml
+
+.claudeoutputs/
